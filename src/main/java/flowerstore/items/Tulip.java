@@ -1,7 +1,7 @@
-package flower.items;
+package flowerstore.items;
 
-import flower.filters.properties.FlowerColor;
-import flower.filters.properties.FlowerType;
+import flowerstore.properties.FlowerColor;
+import flowerstore.properties.FlowerType;
 
 public class Tulip extends Flower{
     public Tulip(){

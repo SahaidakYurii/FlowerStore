@@ -1,4 +1,4 @@
-package flower.filters.properties;
+package flowerstore.properties;
 
 public enum FlowerColor {
     /**
@@ -18,7 +18,6 @@ public enum FlowerColor {
         this.stringRepresentation = stringRepresentation;
     }
 
-    @Override
     public String toString() {
         return stringRepresentation;
     }

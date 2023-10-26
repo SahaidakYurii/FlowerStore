@@ -1,11 +1,11 @@
-package flower.items;
+package flowerstore.items;
 
 import lombok.Getter;
 import lombok.Setter;
-import java.util.Random;
 
-import flower.filters.properties.FlowerColor;
-import flower.filters.properties.FlowerType;
+import flowerstore.properties.FlowerColor;
+import flowerstore.properties.FlowerType;
+import java.util.Random;
 
 
 
@@ -33,5 +33,13 @@ public class Flower {
         this.color =        flower.color;
         this.price =        flower.price;
         this.flowerType =   flower.flowerType;
+    }
+
+    public Flower(int sepalLength, double price,  FlowerColor color){
+        Random rand = new Random();
+        this.sepalLength =  sepalLength;
+        this.color =        color;
+        this.price =        price;
+        this.flowerType =   FlowerType.values()[rand.nextInt(FlowerType.values().length)];
     }
 }
