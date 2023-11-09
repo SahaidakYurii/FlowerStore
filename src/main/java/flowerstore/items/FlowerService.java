@@ -1,14 +1,25 @@
 package flowerstore.items;
 
-import flowerstore.properties.FlowerColor;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
 @Service
 public class FlowerService {
-    public List<Flower> getFlowers(){
-        return List.of(new Flower(1, 45, FlowerColor.RED));
+    private final FlowerRepository flowerRepository;
+
+    @Autowired
+    public FlowerService(FlowerRepository flowerRepository) {
+        this.flowerRepository = flowerRepository;
+    }
+    
+    public List<Flower> getFlowers() {
+        return flowerRepository.findAll();
+    }
+
+    public void add(Flower flower) {
+        flowerRepository.save(flower);
     }
 }
