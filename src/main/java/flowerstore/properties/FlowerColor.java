@@ -1,5 +1,7 @@
 package flowerstore.properties;
 
+import com.fasterxml.jackson.annotation.JsonValue;
+
 public enum FlowerColor {
     /**
      * Flower colors.
@@ -18,7 +20,13 @@ public enum FlowerColor {
         this.stringRepresentation = stringRepresentation;
     }
 
+    @Override
     public String toString() {
         return stringRepresentation;
+    }
+
+    @JsonValue
+    public String getValue() {
+        return this.stringRepresentation;
     }
 }

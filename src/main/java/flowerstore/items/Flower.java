@@ -17,7 +17,7 @@ import java.util.Random;
 @AllArgsConstructor @NoArgsConstructor @ToString @Entity
 @Setter
 public class Flower {
-    @Id
+    @Id @Getter
     private Integer id;
     @Getter
     protected double sepalLength;
@@ -27,6 +27,8 @@ public class Flower {
     protected double price;
     @Getter
     protected FlowerType flowerType;
+    @Getter
+    private String description = "Flower description";
 
     public Flower(Flower flower){
         this.sepalLength =  flower.sepalLength;

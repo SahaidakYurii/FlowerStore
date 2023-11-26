@@ -1,16 +1,16 @@
 package flowerstore.decorators;
 
-import lombok.AllArgsConstructor;
 import flowerstore.items.Item;
 
-@AllArgsConstructor
 public class BasketDecorator extends AbstractDecorator{
-    private final Item item;
-    private final int price = 4;
+    private final int decoratorPrice = 4;
+
+    public BasketDecorator(Item item) {
+        super(item);
+    }
 
     @Override
     public double getPrice() {
-        return price + item.getPrice();
+        return decoratorPrice + super.getPrice();
     }
-    
 }
